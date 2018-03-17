@@ -1,0 +1,50 @@
+{
+    "router": {
+        "post": "/",
+        "get":"/:id"
+    },
+    "listen": {
+		"host": "192.168.0.54",
+        "port": 17777
+    },
+    "db": {
+			"udb": {				
+				"database": "udb",
+				"credentials": {
+					"username": "root",
+					"password": "root"
+				},
+				"options": {
+					"dialect": "mysql",
+					"host": "127.0.0.1",
+					"port": 3306,
+					"pool": {
+						"max": 5,
+						"min": 0,
+						"idle": 10000
+					},
+					"logging": false
+				},
+				"TABLES": {
+					"test": {
+						"table": "test",
+						"config": {
+							"id": {
+								"type": "VARCHAR(255)",
+								"allowNull": false,
+								"primaryKey": true
+							},
+							"value": "TEXT"
+						},
+						"extra_config": {
+							"timestamps": false,
+							"freezeTableName": true,
+							"underscored": true,
+							"charset": "utf8",
+							"collate": "utf8_unicode_ci"
+						}
+					}					
+				}
+			}
+		}
+}
